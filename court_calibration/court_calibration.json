@@ -1,0 +1,173 @@
+{
+    "calibration_points_image": {
+        "left_net_corner": [
+            1162,
+            1288
+        ],
+        "right_net_corner": [
+            2721,
+            1296
+        ],
+        "right_back_corner": [
+            2954,
+            2009
+        ],
+        "left_back_corner": [
+            900,
+            2005
+        ],
+        "center_net": [
+            1941,
+            1296
+        ],
+        "center_back_line": [
+            1924,
+            1999
+        ],
+        "left_service_line_left": [
+            1097,
+            1471
+        ],
+        "right_service_line_left": [
+            2775,
+            1479
+        ],
+        "center_service_line": [
+            1934,
+            1471
+        ],
+        "left_service_back_line_left": [
+            935,
+            1899
+        ],
+        "right_service_back_line_right": [
+            2916,
+            1909
+        ],
+        "center_service_back_line": [
+            1929,
+            1896
+        ]
+    },
+    "calibration_points_court": {
+        "left_net_corner": [
+            0,
+            6.7
+        ],
+        "right_net_corner": [
+            6.1,
+            6.7
+        ],
+        "right_back_corner": [
+            6.1,
+            13.4
+        ],
+        "left_back_corner": [
+            0,
+            13.4
+        ],
+        "center_net": [
+            3.05,
+            6.7
+        ],
+        "center_back_line": [
+            3.05,
+            13.4
+        ],
+        "left_service_line_left": [
+            0,
+            8.68
+        ],
+        "right_service_line_left": [
+            6.1,
+            8.68
+        ],
+        "center_service_line": [
+            3.05,
+            8.68
+        ],
+        "left_service_back_line_left": [
+            0,
+            12.64
+        ],
+        "right_service_back_line_right": [
+            6.1,
+            12.64
+        ],
+        "center_service_back_line": [
+            3.05,
+            12.64
+        ]
+    },
+    "src_points": [
+        [
+            1162.0,
+            1288.0
+        ],
+        [
+            2721.0,
+            1296.0
+        ],
+        [
+            2954.0,
+            2009.0
+        ],
+        [
+            900.0,
+            2005.0
+        ]
+    ],
+    "dst_points": [
+        [
+            0.0,
+            6.699999809265137
+        ],
+        [
+            6.099999904632568,
+            6.699999809265137
+        ],
+        [
+            6.099999904632568,
+            13.399999618530273
+        ],
+        [
+            0.0,
+            13.399999618530273
+        ]
+    ],
+    "transformation_matrix": [
+        [
+            0.008852523041294654,
+            0.003234813161533051,
+            -14.453071126038958
+        ],
+        [
+            -0.0002466529742496401,
+            0.03484161056923244,
+            -29.29659357785747
+        ],
+        [
+            -1.5309410425012192e-05,
+            0.0010095462763920152,
+            1.0
+        ]
+    ],
+    "inverse_matrix": [
+        [
+            208.31432439001577,
+            -57.64520029789454,
+            1321.9737330154073
+        ],
+        [
+            2.2480273858603304,
+            27.91172458111373,
+            850.2093261295608
+        ],
+        [
+            0.0009196818451493579,
+            -0.029060690629061418,
+            1.0
+        ]
+    ],
+    "timestamp": 1746796228.207458
+}
