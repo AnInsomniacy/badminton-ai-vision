@@ -186,10 +186,6 @@ For court calibration problems:
 
 ---
 
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
 ## 🙏 Acknowledgements
 
 - [YOLO by Ultralytics](https://github.com/ultralytics/ultralytics)
