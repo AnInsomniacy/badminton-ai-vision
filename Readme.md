@@ -6,6 +6,9 @@
 - ✅ Player movement distance tracking
 - ✅ Player speed analysis
 
+<img width="1517" alt="iShot_2025-05-11_16 40 17" src="https://github.com/user-attachments/assets/bd518616-0709-460d-b16f-48753f647b7e" />
+
+
 **Coming Soon:**
 - ⏳ Shot detection and classification
 - ⏳ Rally pattern analysis
