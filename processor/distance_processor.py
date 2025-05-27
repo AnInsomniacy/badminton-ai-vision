@@ -15,7 +15,7 @@ DISTANCE_BAR_CONFIG = {
     "bar_height": 80,  # Bar height (pixels)
     "margin": 40,  # Bar margin (pixels)
     "name_margin": 15,  # Distance between name and bar (pixels)
-    "pixels_per_meter": 18,  # Pixels per meter for bar (higher = longer bar)
+    "pixels_per_meter": 3,  # Pixels per meter for bar (higher = longer bar)
     "right_offset": 200,  # Right side offset (moves whole bar left)
 
     # Text parameters

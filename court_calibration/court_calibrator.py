@@ -9,8 +9,8 @@ from collections import defaultdict, deque
 # Hard-coded configuration for court calibration
 CONFIG = {
     # Input/Output paths
-    "video_path": "/Users/sekiro/Projects/PyCharm/Badminton_AI_Analysis/raw_videos/OneMatch.mp4",  # Absolute path to video
-    "calibration_file": "/Users/sekiro/Projects/PyCharm/Badminton_AI_Analysis/court_calibration/court_calibration.pkl",  # Absolute path to calibration file
+    "video_path": "/Users/sekiro/Projects/PyCharm/badminton-ai-vision/raw_videos/OneMatch.mp4",  # Absolute path to video
+    "calibration_file": "/Users/sekiro/Projects/PyCharm/badminton-ai-vision/court_calibration/court_calibration.pkl",  # Absolute path to calibration file
     "force_calibrate": True,  # Force recalibration even if calibration file exists
 }
 
