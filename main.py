@@ -26,7 +26,7 @@ CONFIG = {
     ),
 
     # ROI coordinates [x_min, y_min, x_max, y_max] in relative format
-    "roi": [0.24, 0.31, 0.77, 0.97],
+    "roi": [0.21, 0.23, 0.80, 0.97],
 
     # Processing settings
     "display_output": True,  # Whether to display output frames in window
