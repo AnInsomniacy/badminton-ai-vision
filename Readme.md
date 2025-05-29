@@ -6,7 +6,8 @@
 - ✅ Player movement distance tracking
 - ✅ Player speed analysis
 
-<img width="1517" alt="iShot_2025-05-11_16 40 17" src="https://github.com/user-attachments/assets/bd518616-0709-460d-b16f-48753f647b7e" />
+<img width="1548" alt="figure_4" src="https://github.com/user-attachments/assets/8d020c5c-0c79-47ef-b818-3eea18f35f95" />
+
 
 
 **Coming Soon:**
