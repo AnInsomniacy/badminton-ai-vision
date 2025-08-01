@@ -1,197 +1,112 @@
-# 🏸 badminton-ai-vision
+# Badminton AI Vision
 
-## 📊 Current & Future Features
+A computer vision system for analyzing badminton matches using AI-powered pose detection and court calibration to track player movements, distances, and speeds.
 
-**Currently Available:**
-- ✅ Player movement distance tracking
-- ✅ Player speed analysis
+![Badminton Analysis](https://github.com/user-attachments/assets/8d020c5c-0c79-47ef-b818-3eea18f35f95)
 
-<img width="1548" alt="figure_4" src="https://github.com/user-attachments/assets/8d020c5c-0c79-47ef-b818-3eea18f35f95" />
+## Features
 
+- **Pose Detection**: High-precision skeletal tracking using YOLOv8/v11
+- **Court Calibration**: Maps pixels to real-world coordinates for accurate measurements
+- **Distance Tracking**: Calculates total movement distance for each player
+- **Speed Analysis**: Real-time measurement of player instantaneous speed
+- **ROI Processing**: Focus detection on relevant court areas
+- **Player Identification**: Automatically distinguishes between players
+- **Visualization**: Color-coded skeleton rendering with customizable display
 
-
-**Coming Soon:**
-- ⏳ Shot detection and classification
-- ⏳ Rally pattern analysis
-- ⏳ Player positioning heatmaps
-- ⏳ Performance metrics and statistics
-
----
-
-## 🌟 Overview
-
-Badminton-Rally-AI-Analyzer is a sophisticated computer vision system that uses AI to analyze badminton matches. The system employs YOLO pose detection to track players' movements, calculate distances traveled, and measure movement speeds with high precision through court calibration.
-
----
-
-## ✨ Key Features
-
-| Feature | Description |
-|---------|-------------|
-| **🎯 Pose Detection** | High-precision skeletal tracking using YOLOv8 |
-| **📏 Court Calibration** | Maps pixels to real-world coordinates for accurate measurements |
-| **📈 Distance Tracking** | Calculates total movement distance for each player |
-| **⚡ Speed Analysis** | Real-time measurement of player instantaneous speed |
-| **🔍 Custom ROI** | Focus detection on relevant court areas |
-| **👤 Player Identification** | Automatically distinguishes between players |
-| **🎨 Visualization** | Color-coded skeleton rendering with customizable display |
-
----
-
-## 🛠️ Installation
-
-### Prerequisites
+## Requirements
 
 - Python 3.8+
-- OpenCV
-- NumPy
-- Ultralytics YOLOv8
-- PIL (Pillow)
-- Matplotlib
+- Dependencies listed in `requirements.txt`
 
-### Setup
+## Installation
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/badminton-rally-ai-analyzer.git
-cd badminton-rally-ai-analyzer
+git clone https://github.com/AnInsomniacy/badminton-ai-vision.git
+cd badminton-ai-vision
 
-# Create and activate virtual environment
+# Create virtual environment
 python -m venv .venv
 source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 
 # Install dependencies
 pip install -r requirements.txt
 
-# Create necessary directories
-mkdir -p models raw_videos processed_videos
+# Create directories for videos
+mkdir -p raw_videos processed_videos
 ```
 
-> 💡 **Note:** You'll need to download a YOLOv8 pose model into the `models` directory.
+**Note**: You'll need to place a YOLOv8/v11 pose model in the `models/` directory.
 
----
+## Usage
 
-## 📚 Usage Guide
+### 1. Court Calibration
 
-### 1️⃣ Court Calibration
-
-This step maps the video pixels to real-world court measurements:
+Calibrate the court coordinates for accurate distance measurements:
 
 ```bash
 python court_calibration/court_calibrator.py
 ```
 
-### 2️⃣ Process Video
+### 2. Process Video
 
 ```bash
 python main.py
 ```
 
-The system will:
-- Process the specified video
-- Track players and their movements
-- Calculate and visualize distances and speeds
-- Save the analysis to an output video
+### 3. Configuration
 
-### 3️⃣ Configuration
-
-Edit the `CONFIG` dictionary in `main.py` to customize your analysis:
+Edit the `CONFIG` dictionary in `main.py` to customize analysis settings:
 
 ```python
 CONFIG = {
     "input_path": "raw_videos/YourMatch.mp4",
+    "model_path": "models/yolo11x-pose.mlpackage",
     "enable_distance_tracking": True,
     "enable_speed_tracking": True,
     "person_aliases": {
         "upper": "PLAYER 1",
         "lower": "PLAYER 2"
-    },
-    # Additional settings...
+    }
 }
 ```
 
----
-
-## 🗂️ Project Structure
+## Project Structure
 
 ```
-badminton-rally-ai-analyzer/
-├── court_calibration/
-│   └── court_calibrator.py     # Court calibration tool
-├── processor/
-│   ├── distance_processor.py   # Player distance tracking
-│   ├── image_processor.py      # Static image processing
-│   ├── mask_processor.py       # ROI masking utilities
-│   ├── model_processor.py      # YOLO model handling
-│   ├── speed_processor.py      # Player speed tracking
-│   └── video_processor.py      # Video processing pipeline
-├── main.py                     # Main application entry point
-├── renderer.py                 # Visualization utilities 
-├── utility.py                  # Helper functions
+badminton-ai-vision/
+├── court_calibration/          # Court calibration tools
+│   ├── court_calibrator.py
+│   └── ROISelector.py
+├── processor/                  # Core processing modules
+│   ├── video_processor.py
+│   ├── image_processor.py
+│   ├── model_processor.py
+│   ├── distance_processor.py
+│   ├── speed_processor.py
+│   └── mask_processor.py
 ├── models/                     # YOLO model storage
 ├── raw_videos/                 # Input videos
-└── processed_videos/           # Output videos
+├── processed_videos/           # Output videos
+├── main.py                     # Main application
+├── renderer.py                 # Visualization utilities
+└── requirements.txt
 ```
 
----
+## Key Configuration Options
 
-## ⚙️ Configuration Options
+| Setting | Description |
+|---------|-------------|
+| `model_path` | Path to YOLO pose model |
+| `confidence_threshold` | Detection confidence (0.0-1.0) |
+| `input_path` | Path to input video file |
+| `enable_distance_tracking` | Enable distance measurement |
+| `enable_speed_tracking` | Enable speed analysis |
+| `roi` | Region of interest coordinates |
+| `person_aliases` | Custom player names |
 
-| Category | Option | Description |
-|----------|--------|-------------|
-| **Model** | `model_path` | Path to YOLO pose model |
-| | `confidence_threshold` | Detection confidence (0.0-1.0) |
-| **I/O** | `input_path` | Path to input video |
-| | `output_dir` | Directory for processed videos |
-| **Tracking** | `enable_distance_tracking` | Enable distance measurement |
-| | `enable_speed_tracking` | Enable speed tracking |
-| | `player_display_order` | Control order of player stats display |
-| **Visual** | `show_bounding_box` | Show detection boxes |
-| | `keypoint_color` | Color for keypoints |
-| | `skeleton_colors` | Colors for different body parts |
-| | `person_aliases` | Custom player names |
+## Acknowledgments
 
----
-
-## 🔧 Troubleshooting
-
-### Video File Access Issues
-
-If you encounter problems accessing video files:
-
-```bash
-# Fix file permissions
-chmod 644 raw_videos/YourVideo.mp4
-
-# Convert video to compatible format
-ffmpeg -i raw_videos/YourVideo.mp4 -c:v libx264 -preset slow -crf 22 raw_videos/converted.mp4
-```
-
-Or modify the `CONFIG` to use absolute paths:
-
-```python
-CONFIG = {
-    "video_path": "/absolute/path/to/your/video.mp4",
-    # Other settings...
-}
-```
-
-### Calibration Issues
-
-For court calibration problems:
-
-- Ensure good lighting and court visibility
-- Mark the four corners accurately
-- Try a frame with clear court lines
-- Verify calibration file paths
-
----
-
-## 🙏 Acknowledgements
-
-- [YOLO by Ultralytics](https://github.com/ultralytics/ultralytics)
-- OpenCV project
-
----
-
-Created with ❤️ for badminton enthusiasts and coaches. Feel free to contribute to this project!
+- [Ultralytics YOLO](https://github.com/ultralytics/ultralytics)
+- OpenCV
